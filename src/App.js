@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [joke, setJoke] = useState("");
+  const fetchapi = () => {
+    fetch("https://sv443.net/jokeapi/v2/joke/Programming?type=single")
+      .then((response) => response.json())
+      .then((data) => setJoke(data.joke));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="buttonBox">
+      <h1>Joke Generator Using React and Joke API</h1>
+      <br />
+      <button onClick={fetchapi}>Get Joke</button>
+      <br />
+      <p>{joke}</p>
     </div>
   );
 }

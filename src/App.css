@@ -1,38 +1,73 @@
-.App {
+.buttonBox {
+  width: 100%;
+  height: auto;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Reduced shadow opacity for a softer look */
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-size: 2rem; /* Scaled down using rem units */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+p {
+  font-size: 1.2rem; /* Scaled for better readability */
+  color: #040404;
+  margin-bottom: 20px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+button {
+  width: 60%; /* Adjusted width for smaller screens */
+  height: 40px;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  /* Tablet view */
+  h1 {
+    font-size: 1.8rem; /* Smaller heading size for tablets */
+  }
+
+  p {
+    font-size: 1rem; /* Smaller font size for better fit */
+  }
+
+  button {
+    width: 80%; /* Button takes up more space */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+@media screen and (max-width: 480px) {
+  /* Mobile view */
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  h1 {
+    font-size: 1rem; /* Even smaller font for mobile */
   }
-  to {
-    transform: rotate(360deg);
+
+  p {
+    font-size: 0.5rem; /* Adjusted for mobile readability */
+  }
+
+  button {
+    width: 60%; /* Button spans the full width */
+  }
+
+  .buttonBox {
+    padding: 10px; /* Reduced padding for better fit on small screens */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Softer shadow */
   }
 }
